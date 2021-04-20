@@ -3,7 +3,7 @@ from time import sleep
 from selenium import webdriver
 # from util.sql_util import SqlUtil
 
-
+#数据库配置
 host='127.0.0.1'
 port=3306
 user='root'
@@ -18,6 +18,7 @@ chromedriver_dir=os.path.join(project_dir,'Chromedriver')
 print("project_dir:"+project_dir)
 print("chromedriver_dir:"+chromedriver_dir)
 
+#chromedriver设置
 CHROME_PATH = os.path.join(chromedriver_dir,'chromedriver_'+'89')  # your chromedriver's path，这个是网页和chrome浏览器之间通信必须要用到的
 print("CHROME_PATH:",CHROME_PATH)
 chrome_opt = webdriver.ChromeOptions()
@@ -32,7 +33,8 @@ driver = webdriver.Chrome(executable_path=CHROME_PATH, desired_capabilities=chro
 # print(a)
 # sleep(10)
 
-driver.get("http://m.tsbeer.com/mdcf?RH=223e4f84")
+
+driver.get("http://m.tsbeer.com/mdcf?RH=223e4f84")  #加载对应url
 driver.find_element_by_class_name("hc-btn-cancel").click()  #取消
 sleep(3)
 driver.find_element_by_class_name("hc-current-region").click() #定位
@@ -53,6 +55,7 @@ print("hc_region_items[10].is_enabled():"+str(hc_region_items[10].is_enabled()))
 print("hc_region_items[10].is_displayed():"+str(hc_region_items[10].is_displayed()))
 k=0
 a=""
+#爬取95页的商家信息
 for i in range(95, mint_cell_texts_length):
 
     try:
