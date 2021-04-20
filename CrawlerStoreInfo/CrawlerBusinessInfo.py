@@ -3,6 +3,9 @@ from time import sleep
 from selenium import webdriver
 # from util.sql_util import SqlUtil
 
+#参考文章:
+#python selenium禁止加载某些请求:https://blog.csdn.net/qq254271304/article/details/105766653
+
 #数据库配置
 host='127.0.0.1'
 port=3306
