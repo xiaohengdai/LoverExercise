@@ -31,6 +31,7 @@ driver = webdriver.Chrome(executable_path=CHROME_PATH, desired_capabilities=chro
 # 上海市的经纬度121.4852，31.24956
 # print(a)
 # sleep(10)
+
 driver.get("http://m.tsbeer.com/mdcf?RH=223e4f84")
 driver.find_element_by_class_name("hc-btn-cancel").click()  #取消
 sleep(3)
