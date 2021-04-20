@@ -22,8 +22,8 @@ print("chromedriver_dir:"+chromedriver_dir)
 CHROME_PATH = os.path.join(chromedriver_dir,'chromedriver_'+'89')  # your chromedriver's path，这个是网页和chrome浏览器之间通信必须要用到的
 print("CHROME_PATH:",CHROME_PATH)
 chrome_opt = webdriver.ChromeOptions()
-chrome_opt.add_argument('--no-sandbox')
-chrome_opt.add_argument("--disable-dev-shm-usage")
+chrome_opt.add_argument('--no-sandbox')# 在 root 权限下跑，沙盒模式运行
+# chrome_opt.add_argument("--disable-dev-shm-usage")
 # chrome_opt.add_argument("proxy-server=http://127.0.0.1:1087")  # 加载代理IP
 
 driver = webdriver.Chrome(executable_path=CHROME_PATH, desired_capabilities=chrome_opt.to_capabilities())
