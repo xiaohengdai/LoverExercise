@@ -1,8 +1,17 @@
+import os
 import time
 
 from selenium import webdriver
 
-chrome_path = '/Users/xiaoheng/Downloads/chromedriver'
+
+project_dir=os.path.join(os.getcwd(),"..")
+chromedriver_dir=os.path.join(project_dir,'Chromedriver')
+print("project_dir:"+project_dir)
+print("chromedriver_dir:"+chromedriver_dir)
+
+#chromedriver设置
+chrome_path = os.path.join(chromedriver_dir,'chromedriver_'+'89')
+print("chrome_path:",chrome_path)
 chrome_opt = webdriver.ChromeOptions()
 chrome_opt.add_argument('--no--sandbox')
 driver = webdriver.Chrome(executable_path=chrome_path, desired_capabilities=chrome_opt.to_capabilities())
